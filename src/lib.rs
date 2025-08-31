@@ -133,11 +133,11 @@ pub fn hash(val: &[u8]) -> Hash {
 }
 
 /// Return the hash of the given hash extended with the given value.
-pub fn extend_and_hash(id: &Hash, val: &[u8]) -> Hash {
-    let mut hash_data = id.as_ref().to_vec();
-    hash_data.extend_from_slice(val);
-    hash(&hash_data)
-}
+//pub fn extend_and_hash(id: &Hash, val: &[u8]) -> Hash {
+//    let mut hash_data = id.as_ref().to_vec();
+//    hash_data.extend_from_slice(val);
+//    hash(&hash_data)
+//}
 
 #[cfg(test)]
 mod tests {
@@ -150,7 +150,7 @@ mod tests {
             Hash::new_unique().to_bytes(),
         ];
 
-        const ITERS: usize = 200_000;
+        const ITERS: usize = 500_000;
 
         // Run the sha2 implementation
         let before = std::time::Instant::now();
